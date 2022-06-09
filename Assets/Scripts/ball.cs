@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class ball : MonoBehaviour
 {
@@ -40,8 +43,9 @@ public class ball : MonoBehaviour
         // ぶつかったオブジェクトが収集アイテムだった場合
         if (other.gameObject.CompareTag("Pick Up"))
         {
+            SceneManager.LoadScene("Goal");
             // その収集アイテムを非表示にします
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
 
             // スコアを加算します
             score = score + 1;
